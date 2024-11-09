@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prajit Adhikari - CV</title>
+    <title>Prajit Adhikari - Personal Website</title>
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
+            --accent-color: #e74c3c;
             --text-color: #333;
             --background-color: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -17,193 +24,145 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
         header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
         }
 
-        h1 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-info {
+        .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
-        .contact-info a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-        }
-
-        h2 {
+        .social-links a {
             color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        .experience-item {
-            margin-bottom: 1.5rem;
+        .social-links a:hover {
+            color: var(--secondary-color);
         }
 
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-item {
-            background-color: var(--background-color);
-            padding: 0.5rem;
-            border-radius: 4px;
-            text-align: center;
+        .btn:hover {
+            background-color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Prajit Adhikari</h1>
-            <div class="contact-info">
-                <a href="mailto:prajit.076bie029@tcioe.edu.np">📧 Email</a>
-                <a href="tel:+977-9861294040">📱 +977-9861294040</a>
-                <a href="https://www.linkedin.com/in/prajit-a-a8a770126" target="_blank">🔗 LinkedIn</a>
-                <a href="https://github.com/adhikariprajitraj" target="_blank">💻 GitHub</a>
+    <header>
+        <nav class="container">
+            <div class="logo">Prajit Adhikari</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
-        </header>
+        </nav>
+    </header>
 
-        <section class="section">
-            <h2>Education</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <strong>Bachelor of Engineering in Industrial Engineering</strong>
-                    <span>April 2024</span>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hello, I'm Prajit Adhikari</h1>
+                <p>Industrial Engineering Student | Researcher | Developer</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+                <div class="social-links">
+                    <a href="https://github.com/adhikariprajitraj" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/prajit-a-a8a770126" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:prajit.076bie029@tcioe.edu.np"><i class="fas fa-envelope"></i></a>
                 </div>
-                <div>Thapathali campus, Institute of Engineering, Tribhuvan University</div>
-                <div>GPA: 78.85/100</div>
-                <div><strong>Key Courses:</strong> ${education.courses.join(', ')}</div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Research Experience</h2>
-            ${researchExperience.map(exp => `
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <strong>${exp.position} - ${exp.organization}</strong>
-                        <span>${exp.duration}</span>
-                    </div>
-                    <ul>
-                        ${exp.details.map(detail => `<li>${detail}</li>`).join('')}
-                    </ul>
-                </div>
-            `).join('')}
-        </section>
-
-        <section class="section">
-            <h2>Work Experience</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <strong>${workExperience.position} - ${workExperience.organization}</strong>
-                    <span>${workExperience.duration}</span>
-                </div>
-                <ul>
-                    ${workExperience.details.map(detail => `<li>${detail}</li>`).join('')}
-                </ul>
             </div>
         </section>
-
-        <section class="section">
-            <h2>Teaching Experience</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <strong>${teachingExperience.organization}</strong>
-                    <span>${teachingExperience.duration}</span>
-                </div>
-                <ul>
-                    ${teachingExperience.details.map(detail => `<li>${detail}</li>`).join('')}
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Achievements</h2>
-            <ul>
-                ${achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Publications</h2>
-            ${publications.map(pub => `
-                <div class="experience-item">
-                    <strong>${pub.title}</strong>
-                    <div>${pub.journal} - ${pub.date}</div>
-                    <div>DOI: ${pub.doi}</div>
-                </div>
-            `).join('')}
-        </section>
-
-        <section class="section">
-            <h2>Projects</h2>
-            ${projects.map(project => `
-                <div class="experience-item">
-                    <strong>${project.name}</strong>
-                    <div>${project.details}</div>
-                </div>
-            `).join('')}
-        </section>
-
-        <section class="section">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                ${skills.map(skill => `
-                    <div class="skill-item">${skill}</div>
-                `).join('')}
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>References</h2>
-            ${references.map(ref => `
-                <div class="experience-item">
-                    <strong>${ref.name}</strong>
-                    <div>${ref.position}</div>
-                    <div>${ref.contact}</div>
-                </div>
-            `).join('')}
-        </section>
-    </div>
+    </main>
 </body>
 </html>

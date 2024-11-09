@@ -149,6 +149,62 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .featured-projects {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .project-card {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -181,5 +237,70 @@
             </div>
         </section>
     </main>
+
+    <section class="featured-projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Waste Management Optimization -->
+                <div class="project-card">
+                    <h3>Waste Route Optimization</h3>
+                    <p>Optimized waste collection routes for Lalitpur Metropolitan City using operations research techniques and GIS integration.</p>
+                    <p><strong>Impact:</strong> 25% reduction in collection time and 20% cost savings.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">QGIS</span>
+                        <span class="tech-tag">OR-Tools</span>
+                    </div>
+                </div>
+
+                <!-- Trading Strategy Optimization -->
+                <div class="project-card">
+                    <h3>Quantitative Trading Strategies</h3>
+                    <p>Developed mean reversion and momentum-based trading strategies using statistical analysis and machine learning.</p>
+                    <p><strong>Result:</strong> Achieved consistent alpha generation with Sharpe ratio > 1.5</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+
+                <!-- Eddy Current Separator -->
+                <div class="project-card">
+                    <h3>Eddy Current Separator Design</h3>
+                    <p>Engineered and prototyped an optimized eddy current separator for efficient waste segregation.</p>
+                    <p><strong>Achievement:</strong> 90% separation efficiency for non-ferrous metals</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">CAD</span>
+                        <span class="tech-tag">MATLAB</span>
+                        <span class="tech-tag">Simulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="projects.html" class="btn">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional: Add a brief skills section -->
+    <section class="skills-section" style="background-color: var(--background-color); padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="tech-stack" style="justify-content: center; margin-top: 2rem;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">MATLAB</span>
+                <span class="tech-tag">R</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Julia</span>
+                <span class="tech-tag">OR Tools</span>
+                <span class="tech-tag">AMPL</span>
+                <span class="tech-tag">GIS</span>
+                <span class="tech-tag">Machine Learning</span>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

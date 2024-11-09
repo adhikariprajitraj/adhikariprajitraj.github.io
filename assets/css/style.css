@@ -1148,34 +1148,86 @@ a {
 /* Courses Section */
 .courses {
     margin-top: 2rem;
+    background: var(--card-background);
+    border-radius: 12px;
 }
 
 .courses h4 {
     color: var(--primary-color);
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue-light);
 }
 
 .course-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
+    margin-top: 1rem;
 }
 
 .course-tag {
-    background: var(--primary-blue);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
     font-size: 0.9rem;
+    font-weight: 500;
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--primary-blue);
+    opacity: 0.8;
 }
 
 .course-tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+    transform: translateX(5px);
+    background: var(--card-background);
+    border-color: var(--primary-blue-light);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+}
+
+/* Course Categories */
+.course-tag.mathematics::before { background: var(--statistics-color); }
+.course-tag.programming::before { background: var(--python-color); }
+.course-tag.engineering::before { background: var(--matlab-color); }
+.course-tag.management::before { background: var(--node-color); }
+.course-tag.analysis::before { background: var(--research-color); }
+
+/* Dark Theme Adjustments */
+[data-theme="dark"] .course-tag {
+    background: var(--card-background);
+    border-color: var(--card-border);
+}
+
+[data-theme="dark"] .course-tag:hover {
+    background: var(--background-color);
+    border-color: var(--primary-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-grid {
+        gap: 0.6rem;
+    }
+    
+    .course-tag {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
 }
 
 /* Experience Section */
@@ -1274,4 +1326,97 @@ a {
     .course-tag {
         font-size: 0.85rem;
     }
+}
+
+/* General Card Styling */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Headers */
+.about-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Experience Items */
+.experience-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.experience-item h4 {
+    color: var(--heading-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.duration {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+/* Lists in Cards */
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.card ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Courses Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.course-tag {
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.course-tag:hover {
+    background: var(--tag-hover-bg);
 }

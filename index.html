@@ -205,15 +205,5 @@
             `).join('')}
         </section>
     </div>
-
-    <script>
-        // Load JSON data
-        const cvData = ${JSON.stringify(YOUR_JSON_DATA)};
-        
-        // Replace template literals with actual data
-        document.body.innerHTML = document.body.innerHTML.replace(/\${([^}]+)}/g, (match, expr) => {
-            return eval(`with(cvData) { ${expr} }`);
-        });
-    </script>
 </body>
 </html>

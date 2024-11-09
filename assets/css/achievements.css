@@ -266,6 +266,13 @@
     color: #e74c3c; /* Publication red */
 }
 
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 /* DOI link style */
 .doi-link {
     text-decoration: none;

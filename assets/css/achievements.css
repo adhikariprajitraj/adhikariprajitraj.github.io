@@ -4,7 +4,7 @@
 
 .achievements-page h1 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--heading-color);
     margin-bottom: 3rem;
     font-size: 2.5rem;
     position: relative;
@@ -48,9 +48,10 @@
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     gap: 1.5rem;
+    border: 1px solid var(--border-color);
 }
 
 .achievement-card:hover {
@@ -67,6 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.5s ease;
 }
 
 .achievement-icon i {
@@ -84,34 +86,33 @@
     font-size: 1.2rem;
 }
 
-.achievement-content .role {
-    color: var(--accent-color);
-    font-weight: 500;
+.achievement-content .role,
+.achievement-content .duration,
+.achievement-content .location {
+    color: var(--text-color);
+    opacity: 0.8;
     margin-bottom: 0.3rem;
 }
 
 .achievement-content .duration {
-    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .achievement-content .location {
-    color: var(--text-secondary);
     font-style: italic;
 }
 
 .achievement-content ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 1rem;
+    color: var(--text-color);
 }
 
 .achievement-content ul li {
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.5rem;
-    line-height: 1.4;
 }
 
 .achievement-content ul li::before {
@@ -121,24 +122,16 @@
     left: 0;
 }
 
-.publication .journal {
-    font-style: italic;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
+.publication .journal,
+.publication .title,
+.publication .date,
+.publication .doi {
+    color: var(--text-color);
 }
 
 .publication .title {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.publication .doi {
-    font-family: monospace;
-    background: var(--tag-bg);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-    margin-top: 0.5rem;
+    font-weight: 600;
+    color: var(--heading-color);
 }
 
 /* Dark theme adjustments */
@@ -161,4 +154,118 @@
     .achievement-content ul li {
         text-align: left;
     }
-} 
+}
+
+/* Add to your existing achievements.css */
+
+.achievement-card .institution {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-card:hover .achievement-icon {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
+
+.achievement-icon {
+    transition: transform 0.5s ease;
+}
+
+.publication .title {
+    font-weight: 600;
+    color: var(--heading-color);
+    margin: 0.5rem 0;
+}
+
+/* Enhanced card animations */
+.achievement-card {
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    border-left-color: var(--accent-color);
+}
+
+/* Section transitions */
+.achievement-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger the animations */
+.achievement-section:nth-child(1) { animation-delay: 0.1s; }
+.achievement-section:nth-child(2) { animation-delay: 0.2s; }
+.achievement-section:nth-child(3) { animation-delay: 0.3s; }
+.achievement-section:nth-child(4) { animation-delay: 0.4s; }
+.achievement-section:nth-child(5) { animation-delay: 0.5s; }
+
+/* Add these styles to your existing achievements.css */
+
+.achievement-link {
+    text-decoration: none;
+    color: var(--heading-color);
+    transition: color 0.3s ease;
+}
+
+.achievement-link:hover {
+    color: var(--accent-color);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .achievement-card {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .achievement-link:hover {
+    color: var(--accent-color-dark, #61dafb);
+}
+
+[data-theme="dark"] .achievement-content h3 {
+    color: var(--heading-color-dark, #e1e1e1);
+}
+
+[data-theme="dark"] .achievement-content p {
+    color: var(--text-color-dark, #cccccc);
+}
+
+/* Animation for icon on hover */
+.achievement-card:hover .achievement-icon {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
+
+.achievement-icon {
+    transition: transform 0.5s ease;
+}
+
+/* Theme Variables */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --heading-color: #2c3e50;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+    --primary-color: #e1e1e1;
+    --accent-color: #61dafb;
+    --heading-color: #e1e1e1;
+    --text-color: #cccccc;
+    --card-bg: #2d2d2d;
+    --border-color: #404040;
+}

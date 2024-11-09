@@ -1,0 +1,160 @@
+/* LaTeX Section Styles */
+.latex-section {
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.latex-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.latex-card::before {
+    content: '∑';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 120px;
+    opacity: 0.05;
+    font-family: "Times New Roman", serif;
+    transform: rotate(15deg);
+}
+
+.latex-card h2 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.latex-card h2 i {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+.latex-card p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.latex-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 1.2rem 2.5rem;
+    background: var(--accent-color);
+    color: #000000;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+    min-width: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.latex-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.6s ease;
+}
+
+.latex-button:hover::before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+.latex-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    color: var(--accent-color);
+}
+
+.latex-button .math-symbol {
+    font-family: "Times New Roman", serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #000000;
+}
+
+.latex-button:hover .math-symbol {
+    color: var(--accent-color);
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .latex-card {
+    background: var(--card-bg-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .latex-button {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(97, 218, 251, 0.2);
+}
+
+[data-theme="dark"] .latex-button:hover {
+    box-shadow: 0 8px 25px rgba(97, 218, 251, 0.3);
+    background: transparent;
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .latex-button .math-symbol {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .latex-button:hover .math-symbol {
+    color: var(--accent-color);
+}
+
+/* Add these CSS variables to your root */
+:root {
+    --card-bg-alt: #f8f9fa;
+    --card-bg-dark-alt: #2d2d2d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .latex-section {
+        padding: 1rem;
+    }
+    
+    .latex-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .latex-button {
+        padding: 1rem 2rem;
+        min-width: 200px;
+        font-size: 1.1rem;
+    }
+} 

@@ -1,0 +1,74 @@
+.math-animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.math-symbols {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.math-symbol {
+    position: absolute;
+    color: var(--text-color);
+    font-family: "Times New Roman", serif;
+    opacity: 0.2;
+    animation: fallDown linear infinite;
+}
+
+.math-equations {
+    position: fixed;
+    top: -100%;
+    font-family: "Times New Roman", serif;
+    color: var(--text-color);
+    opacity: 0.15;
+    pointer-events: none;
+    animation: equationFall linear infinite;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.2;
+    }
+    90% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes equationFall {
+    0% {
+        transform: translateY(-100%) translateX(-50%) rotate(-15deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.15;
+    }
+    90% {
+        opacity: 0.15;
+    }
+    100% {
+        transform: translateY(100vh) translateX(50%) rotate(15deg);
+        opacity: 0;
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .math-symbol,
+[data-theme="dark"] .math-equations {
+    opacity: 0.12;
+}

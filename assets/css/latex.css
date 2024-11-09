@@ -1,0 +1,174 @@
+/* Main Layout */
+.latex-page {
+    padding: 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.latex-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--heading-color);
+}
+
+/* Section Styling */
+.latex-section {
+    margin: 4rem 0;
+}
+
+.latex-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.latex-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Grid Layout */
+.equation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+/* Equation Cards */
+.equation-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.equation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.equation-card h3 {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* LaTeX Equation Styling */
+.equation-card .MathJax {
+    font-size: 1.3em !important;
+    margin: 2rem 0;
+    display: flex !important;
+    justify-content: center;
+}
+
+.equation-description {
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-style: italic;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .equation-card {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .equation-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .equation-description {
+    opacity: 0.8;
+}
+
+/* Category Labels */
+.equation-category {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Copy Button */
+.copy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+    background: var(--accent-color-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .latex-page {
+        padding: 2rem 1rem;
+    }
+
+    .equation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .equation-card {
+        padding: 1.5rem;
+    }
+
+    .equation-card .MathJax {
+        font-size: 1.1em !important;
+    }
+}
+
+/* Animation for Card Entry */
+.equation-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger the animations */
+.equation-card:nth-child(1) { animation-delay: 0.1s; }
+.equation-card:nth-child(2) { animation-delay: 0.2s; }
+.equation-card:nth-child(3) { animation-delay: 0.3s; }
+.equation-card:nth-child(4) { animation-delay: 0.4s; } 

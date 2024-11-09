@@ -9,8 +9,28 @@
     <link rel="shortcut icon" type="image/jpg" href="favicon.jpg">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/math-animations.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
+    <!-- Add this mathematical animation container -->
+    <div class="math-animation-container">
+        <div class="math-symbols"></div>
+    </div>
+    
     <header>
         <nav class="container">
             <div class="nav-left">
@@ -117,6 +137,19 @@
                 </a>
             </div>
         </section>
+
+        <!-- Add this after your GitHub Projects Section -->
+        <section class="latex-section">
+            <div class="latex-card">
+                <h2><i class="fas fa-square-root-alt"></i> Mathematical Expressions</h2>
+                <p>Explore beautiful mathematical equations and their LaTeX representations.</p>
+                <a href="latex.html" class="latex-button">
+                    <span class="math-symbol">∑</span>
+                    <span class="button-text">View LaTeX Gallery</span>
+                    <span class="math-symbol">∫</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     <script>
@@ -144,5 +177,6 @@
             });
         });
     </script>
+    <script src="assets/js/math-animations.js"></script>
 </body>
 </html> 

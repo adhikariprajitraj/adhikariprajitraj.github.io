@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Equations</title>
+    <link rel="icon" type="image/png" href="favicon.jpg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/latex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="nav-left">
+                <a href="index.html" class="header-profile">
+                    <img src="photo.jpeg" alt="Prajit Adhikari">
+                </a>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Prajit Adhikari</div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="contact.html">Contact</a>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container latex-page">
+        <h1>Mathematical Equations</h1>
+        
+        <section class="latex-section">
+            <h2>Beautiful Mathematics</h2>
+            <div class="equation-grid">
+                <!-- Euler's Identity -->
+                <div class="equation-card">
+                    <h3>Euler's Identity</h3>
+                    $$e^{i\pi} + 1 = 0$$
+                    <p class="equation-description">Connects five fundamental mathematical constants</p>
+                </div>
+
+                <!-- Pythagorean Theorem -->
+                <div class="equation-card">
+                    <h3>Pythagorean Theorem</h3>
+                    $$a^2 + b^2 = c^2$$
+                    <p class="equation-description">Relationship in a right triangle</p>
+                </div>
+
+                <!-- Basel Problem -->
+                <div class="equation-card">
+                    <h3>Basel Problem</h3>
+                    $$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$$
+                    <p class="equation-description">Sum of reciprocals of squares</p>
+                </div>
+
+                <!-- Maxwell's Equations -->
+                <div class="equation-card">
+                    <h3>Maxwell's Equations</h3>
+                    $$\begin{aligned}
+                    \nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
+                    \nabla \cdot \mathbf{B} &= 0 \\
+                    \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+                    \nabla \times \mathbf{B} &= \mu_0\mathbf{J} + \mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
+                    \end{aligned}$$
+                    <p class="equation-description">Fundamental equations of electromagnetism</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Theme toggle functionality
+        const getPreferredTheme = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const applyTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const theme = getPreferredTheme();
+            applyTheme(theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+        });
+    </script>
+</body>
+</html> 

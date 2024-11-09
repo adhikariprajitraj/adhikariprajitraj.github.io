@@ -17,13 +17,19 @@
                 <div class="header-profile">
                     <img src="photo.jpeg" alt="Prajit Adhikari">
                 </div>
-                <div class="logo">Prajit Adhikari</div>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Prajit Adhikari</div>
+                </a>
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -36,7 +42,7 @@
                 </div>
                 <h1>Hello, I'm Prajit Adhikari</h1>
                 <p>Industrial Engineering Student | Researcher | Developer</p>
-                <a href="#contact" class="btn">Get in Touch</a>
+                <a href="contact.html" class="btn">Get in Touch</a>
                 <div class="social-links">
                     <a href="https://github.com/adhikariprajitraj" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/prajit-a-a8a770126" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -110,5 +116,75 @@
             </div>
         </div>
     </section>
+
+    <!-- Add this right after your opening <body> tag -->
+    <div class="background-animations">
+        <svg class="graph-animation" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Nodes -->
+            <circle class="node" cx="20" cy="30" r="3"/>
+            <circle class="node" cx="50" cy="20" r="3"/>
+            <circle class="node" cx="80" cy="30" r="3"/>
+            <circle class="node" cx="35" cy="60" r="3"/>
+            <circle class="node" cx="65" cy="60" r="3"/>
+            
+            <!-- Edges -->
+            <line class="edge" x1="20" y1="30" x2="50" y2="20"/>
+            <line class="edge" x1="50" y1="20" x2="80" y2="30"/>
+            <line class="edge" x1="20" y1="30" x2="35" y2="60"/>
+            <line class="edge" x1="80" y1="30" x2="65" y2="60"/>
+            <line class="edge" x1="35" y1="60" x2="65" y2="60"/>
+        </svg>
+
+        <svg class="optimization-animation" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Contour lines -->
+            <ellipse class="contour" cx="50" cy="50" rx="40" ry="30"/>
+            <ellipse class="contour" cx="50" cy="50" rx="30" ry="22.5"/>
+            <ellipse class="contour" cx="50" cy="50" rx="20" ry="15"/>
+            <ellipse class="contour" cx="50" cy="50" rx="10" ry="7.5"/>
+            
+            <!-- Gradient descent path -->
+            <path class="gradient-path" d="M80,70 Q65,60 50,50 Q35,40 20,30"/>
+        </svg>
+
+        <svg class="combinatorics-animation" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Pascal's triangle elements -->
+            <text class="pascal-number" x="50" y="20">1</text>
+            <text class="pascal-number" x="45" y="35">1</text>
+            <text class="pascal-number" x="55" y="35">1</text>
+            <text class="pascal-number" x="40" y="50">1</text>
+            <text class="pascal-number" x="50" y="50">2</text>
+            <text class="pascal-number" x="60" y="50">1</text>
+        </svg>
+    </div>
+
+    <script>
+    // Check for saved theme preference, otherwise use system preference
+    const getPreferredTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            return savedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    // Apply theme to document
+    const applyTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    };
+
+    // Initialize theme
+    document.addEventListener('DOMContentLoaded', () => {
+        const theme = getPreferredTheme();
+        applyTheme(theme);
+
+        // Add click handler to toggle button
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    });
+    </script>
 </body>
 </html>

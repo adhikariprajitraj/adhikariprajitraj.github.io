@@ -12,14 +12,24 @@
 </head>
 <body>
     <header>
-        
         <nav class="container">
-            <div class="logo">Prajit Adhikari</div>
+            <div class="nav-left">
+                <a href="index.html" class="header-profile">
+                    <img src="photo.jpeg" alt="Prajit Adhikari">
+                </a>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Prajit Adhikari</div>
+                </a>
+            </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -89,5 +99,31 @@
             </div>
         </section>
     </main>
+
+    <script>
+        const getPreferredTheme = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const applyTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const theme = getPreferredTheme();
+            applyTheme(theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+        });
+    </script>
 </body>
 </html> 

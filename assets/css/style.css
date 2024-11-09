@@ -248,4 +248,52 @@ nav {
     .nav-links {
         display: none; /* Consider adding a mobile menu button for smaller screens */
     }
+}
+
+/* Course Styles */
+.courses {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.courses h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.course-tag {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.course-tag:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .course-grid {
+        gap: 0.5rem;
+    }
+
+    .course-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
 } 

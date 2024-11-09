@@ -424,25 +424,38 @@ nav {
 
 /* About Page Styles */
 .about-section {
+    padding: 5rem 0;
+    background: var(--background-color);
+}
+
+.about-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about-section h1 {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
+.about-content p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
-.education, .experience, .publications {
-    margin-bottom: 4rem;
+.about-content p:last-child {
+    margin-bottom: 0;
 }
 
-.education h2, .experience h2, .publications h2 {
-    text-align: center;
-    color: var(--secondary-color);
-    margin-bottom: 2rem;
+@media (max-width: 768px) {
+    .about-content {
+        padding: 1.5rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
 }
 
 /* Contact Page Styles */
@@ -986,4 +999,20 @@ nav {
 /* Optional: Add some margin to better align with the message field */
 .form-group:not(:last-child) {
     margin-bottom: 1.2rem;
+}
+
+.hero-bio {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 1.5rem auto;
+    animation: slideUp 0.8s ease-out 0.2s backwards;
+}
+
+@media (max-width: 768px) {
+    .hero-bio {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
 }

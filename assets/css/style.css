@@ -806,3 +806,135 @@ nav {
 .project-card:hover::before {
     opacity: 1;
 }
+
+/* GitHub Projects Section Styles */
+.github-projects-section {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+    margin-top: 2rem;
+}
+
+.github-projects-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.github-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.github-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.github-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.github-card-content {
+    text-align: center;
+}
+
+.github-card i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.github-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.github-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.github-card li {
+    padding: 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.github-card li:before {
+    content: '→';
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+/* Add new tech tag colors */
+.tech-tag.machine-learning { background-color: #FF6B6B; }
+.tech-tag.reinforcement-learning { background-color: #4ECDC4; }
+.tech-tag.solidworks { background-color: #FF4081; }
+.tech-tag.autocad { background-color: #E91E63; }
+.tech-tag.mathematics { background-color: #9C27B0; }
+.tech-tag.vba { background-color: #2196F3; }
+
+.skills-section {
+    padding: 5rem 0;
+    background: var(--background-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-category {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-tag {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

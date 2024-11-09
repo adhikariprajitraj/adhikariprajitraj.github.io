@@ -215,39 +215,152 @@
 .achievement-link {
     text-decoration: none;
     color: var(--heading-color);
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
-.achievement-link:hover {
+/* IMO link style */
+.achievement-card:nth-child(2) .achievement-link {
+    border-bottom: 2px solid transparent;
+}
+
+.achievement-card:nth-child(2) .achievement-link:hover {
+    color: #1565C0; /* Olympic blue */
+    border-bottom: 2px solid #1565C0;
+}
+
+/* IMMC link style */
+.achievement-card:nth-child(1) .achievement-link {
+    background: linear-gradient(to right, transparent 50%, rgba(52, 152, 219, 0.1) 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+}
+
+.achievement-card:nth-child(1) .achievement-link:hover {
+    color: #2980b9; /* IMMC blue */
+    background-position: right bottom;
+}
+
+/* MAN link style */
+.achievement-section:nth-child(2) .achievement-link {
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.achievement-section:nth-child(2) .achievement-link:hover {
+    color: #27ae60; /* Education green */
+    background-color: rgba(39, 174, 96, 0.1);
+}
+
+/* Journal Publication link style */
+.publication .achievement-link {
+    background: linear-gradient(to bottom, transparent 95%, var(--accent-color) 95%);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+}
+
+.publication .achievement-link:hover {
+    background-size: 100% 100%;
+    color: #e74c3c; /* Publication red */
+}
+
+/* DOI link style */
+.doi-link {
+    text-decoration: none;
     color: var(--accent-color);
+    transition: all 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+    background: rgba(52, 152, 219, 0.1);
 }
 
-/* Dark mode specific styles */
-[data-theme="dark"] .achievement-card {
-    background: var(--card-bg-dark);
-    border: 1px solid var(--border-color);
+.doi-link:hover {
+    background: var(--accent-color);
+    color: white;
 }
 
-[data-theme="dark"] .achievement-link:hover {
-    color: var(--accent-color-dark, #61dafb);
+/* View Awards link style */
+a[href*="awards"] {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .achievement-content h3 {
-    color: var(--heading-color-dark, #e1e1e1);
+a[href*="awards"]:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateX(5px);
 }
 
-[data-theme="dark"] .achievement-content p {
-    color: var(--text-color-dark, #cccccc);
+/* Dark mode adjustments */
+[data-theme="dark"] {
+    /* IMO link */
+    .achievement-card:nth-child(2) .achievement-link:hover {
+        color: #64B5F6;
+        border-bottom-color: #64B5F6;
+    }
+
+    /* IMMC link */
+    .achievement-card:nth-child(1) .achievement-link:hover {
+        color: #4FC3F7;
+    }
+
+    /* MAN link */
+    .achievement-section:nth-child(2) .achievement-link:hover {
+        color: #81C784;
+        background-color: rgba(129, 199, 132, 0.1);
+    }
+
+    /* Journal Publication link */
+    .publication .achievement-link:hover {
+        color: #FF7043;
+    }
+
+    /* DOI link */
+    .doi-link {
+        background: rgba(97, 218, 251, 0.1);
+    }
+
+    .doi-link:hover {
+        background: var(--accent-color);
+    }
+
+    /* View Awards link */
+    a[href*="awards"] {
+        border-color: var(--accent-color);
+    }
+
+    a[href*="awards"]:hover {
+        background: var(--accent-color);
+    }
 }
 
-/* Animation for icon on hover */
-.achievement-card:hover .achievement-icon {
-    transform: rotate(360deg);
-    transition: transform 0.5s ease;
+/* Add subtle animation for all links */
+.achievement-link, .doi-link {
+    position: relative;
+    overflow: hidden;
 }
 
-.achievement-icon {
-    transition: transform 0.5s ease;
+.achievement-link::after, .doi-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.achievement-link:hover::after, .doi-link:hover::after {
+    transform: translateX(0);
 }
 
 /* Theme Variables */
@@ -268,4 +381,19 @@
     --text-color: #cccccc;
     --card-bg: #2d2d2d;
     --border-color: #404040;
+}
+
+/* Add these styles for the DOI link */
+.doi-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.doi-link:hover {
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .doi-link {
+    color: var(--accent-color);
 }

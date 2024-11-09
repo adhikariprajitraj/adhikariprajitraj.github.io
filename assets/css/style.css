@@ -1420,3 +1420,62 @@ a {
 .course-tag:hover {
     background: var(--tag-hover-bg);
 }
+
+.university-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.experience-title {
+    flex: 1;
+}
+
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.education-title {
+    flex: 1;
+}
+
+/* Ensure images don't overflow on mobile */
+@media (max-width: 768px) {
+    .education-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .university-logo {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .company-logo {
+        margin-top: 1rem;
+    }
+}

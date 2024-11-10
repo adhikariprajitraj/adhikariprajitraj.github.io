@@ -1515,3 +1515,20 @@ a {
         height: 180px;
     }
 }
+
+#graphCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+[data-theme="dark"] #graphCanvas {
+    opacity: 0.6;
+    filter: brightness(1.2);
+}
+

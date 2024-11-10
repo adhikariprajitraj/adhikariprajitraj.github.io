@@ -160,45 +160,10 @@
         </div>
     </section>
 
-    <!-- Add this right after your opening <body> tag -->
-    <div class="background-animations">
-        <svg class="graph-animation" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <!-- Nodes -->
-            <circle class="node" cx="20" cy="30" r="3"/>
-            <circle class="node" cx="50" cy="20" r="3"/>
-            <circle class="node" cx="80" cy="30" r="3"/>
-            <circle class="node" cx="35" cy="60" r="3"/>
-            <circle class="node" cx="65" cy="60" r="3"/>
-            
-            <!-- Edges -->
-            <line class="edge" x1="20" y1="30" x2="50" y2="20"/>
-            <line class="edge" x1="50" y1="20" x2="80" y2="30"/>
-            <line class="edge" x1="20" y1="30" x2="35" y2="60"/>
-            <line class="edge" x1="80" y1="30" x2="65" y2="60"/>
-            <line class="edge" x1="35" y1="60" x2="65" y2="60"/>
-        </svg>
+   
 
-        <svg class="optimization-animation" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <!-- Contour lines -->
-            <ellipse class="contour" cx="50" cy="50" rx="40" ry="30"/>
-            <ellipse class="contour" cx="50" cy="50" rx="30" ry="22.5"/>
-            <ellipse class="contour" cx="50" cy="50" rx="20" ry="15"/>
-            <ellipse class="contour" cx="50" cy="50" rx="10" ry="7.5"/>
-            
-            <!-- Gradient descent path -->
-            <path class="gradient-path" d="M80,70 Q65,60 50,50 Q35,40 20,30"/>
-        </svg>
-
-        <svg class="combinatorics-animation" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <!-- Pascal's triangle elements -->
-            <text class="pascal-number" x="50" y="20">1</text>
-            <text class="pascal-number" x="45" y="35">1</text>
-            <text class="pascal-number" x="55" y="35">1</text>
-            <text class="pascal-number" x="40" y="50">1</text>
-            <text class="pascal-number" x="50" y="50">2</text>
-            <text class="pascal-number" x="60" y="50">1</text>
-        </svg>
-    </div>
+    <!-- Add this canvas element right after the body tag -->
+    <canvas id="graphCanvas"></canvas>
 
     <script>
     // Check for saved theme preference, otherwise use system preference
@@ -229,5 +194,8 @@
         });
     });
     </script>
+
+    <!-- Add this before the closing body tag -->
+    <script src="assets/js/graph-animation.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ class GraphAnimation {
                     '#4CAF50', // Green
                     '#FFC107'  // Amber
                 ],
-                edge: 'rgba(33, 150, 243, 0.2)',
+                edge: 'rgba(33, 150, 243, 0.5)',
                 particle: 'rgba(33, 150, 243, 0.4)'
             },
             dark: {
@@ -143,7 +143,7 @@ class GraphAnimation {
             this.ctx.moveTo(from.x, from.y);
             this.ctx.lineTo(to.x, to.y);
             this.ctx.strokeStyle = colors.edge;
-            this.ctx.lineWidth = 1.5;
+            this.ctx.lineWidth = 2;
             this.ctx.stroke();
         });
 
@@ -153,7 +153,7 @@ class GraphAnimation {
             this.ctx.arc(node.x, node.y, this.nodeRadius, 0, Math.PI * 2);
             this.ctx.fillStyle = colors.nodes[node.colorIndex];
             this.ctx.fill();
-            this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
             this.ctx.stroke();
         });
     }

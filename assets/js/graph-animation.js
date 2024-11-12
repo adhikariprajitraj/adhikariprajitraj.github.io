@@ -96,7 +96,7 @@ class GraphAnimation {
             const usedColors = new Set(
                 adjacent[index]
                     .map(adj => this.nodes[adj].colorIndex)
-                    .filter(color => color !== null)
+                    .filter(color => color !== null) 
             );
 
             // Find the first available color

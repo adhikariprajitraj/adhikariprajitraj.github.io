@@ -34,6 +34,9 @@
     --primary-blue: #2196F3;
     --primary-blue-dark: #1976D2;
     --primary-blue-light: #BBDEFB;
+    --primary-green: #4CAF50;
+    --primary-green-dark: #388E3C;
+    --primary-green-light: #C8E6C9;
 }
 
 /* Dark Theme */
@@ -190,11 +193,12 @@ nav {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    background: rgba(var(--card-background-rgb), 0.8);
+    background: var(--card-background);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 4px 30px var(--shadow-color);
     animation: fadeIn 1s ease-out;
+    border: 1px solid var(--primary-green-dark);
 }
 
 .profile-image {
@@ -985,7 +989,7 @@ a {
 
 /* Button styles */
 .btn {
-    background: var(--primary-blue);
+    background: var(--primary-green);
     color: white;
     padding: 0.8rem 1.5rem;
     border: none;
@@ -1531,4 +1535,36 @@ a {
     opacity: 0.6;
     filter: brightness(1.2);
 }
+
+/* Light theme (default) */
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+[data-theme="dark"] .project-card {
+    background: #404040;  /* Lighter than the dark background */
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional hover effect for better interaction */
+[data-theme="dark"] .project-card:hover {
+    background: #333;  /* Slightly lighter on hover */
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+/* Ensure text remains visible */
+[data-theme="dark"] .project-card h3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .project-card p {
+    color: #e0e0e0;
+}
+
+
 

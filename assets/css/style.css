@@ -1566,5 +1566,84 @@ a {
     color: #e0e0e0;
 }
 
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Use a more readable font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    padding: 2rem 1rem; /* Add padding for mobile */
+    text-align: center; /* Center text for mobile */
+}
+
+/* Project Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1rem; /* Space between cards */
+}
+
+/* Project Card */
+.project-card {
+    background: #ffffff; /* Card background */
+    border: 1px solid #e0e0e0; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+/* Image in Project Card */
+.project-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Text in Project Card */
+.project-content {
+    padding: 1rem; /* Add padding */
+}
+
+/* Tech Stack Tags */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap; /* Allow tags to wrap */
+    gap: 0.5rem; /* Space between tags */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block; /* Make buttons inline */
+    padding: 0.5rem 1rem; /* Add padding */
+    margin: 0.5rem 0; /* Space between buttons */
+    text-align: center; /* Center text */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center; /* Center links */
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem; /* Add padding to links */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack project cards on small screens */
+    }
+}
+
 
 

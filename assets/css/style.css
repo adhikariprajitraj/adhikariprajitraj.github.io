@@ -44,10 +44,10 @@
     --primary-color: #61dafb;
     --secondary-color: #4fa3d1;
     --text-color: #e1e1e1;
-    --background-color: #1a1a1a;
-    --card-background: #2d2d2d;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
     --shadow-color: rgba(0,0,0,0.3);
-    --hover-color: rgba(97, 218, 251, 0.1);
+    --hover-color: rgba(97, 218, 251, 0.2);
     --animation-primary: #61dafb;
     --animation-secondary: #4fa3d1;
     --animation-background: rgba(97, 218, 251, 0.1);

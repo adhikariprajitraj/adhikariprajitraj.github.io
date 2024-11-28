@@ -195,10 +195,8 @@ nav {
     margin: 0 auto;
     padding: 2rem;
     background: var(--card-background);
-    backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 4px 30px var(--shadow-color);
-    animation: fadeIn 1s ease-out
 }
 
 .profile-image {
@@ -208,7 +206,6 @@ nav {
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--secondary-color);
-    box-shadow: 0 0 20px var(--shadow-color);
     animation: profilePulse 2s infinite;
 }
 

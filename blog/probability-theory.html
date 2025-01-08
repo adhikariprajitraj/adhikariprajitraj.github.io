@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Theory: Weak and Strong Law of Large Numbers</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="nav-left">
+                <a href="../index.html" class="logo-link">
+                    <div class="logo">Prajit Adhikari</div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../achievements.html">Achievements</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../blog.html" class="active">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container blog-container">
+            <aside class="blog-sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../achievements.html">Achievements</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../blog.html" class="active">Blog</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <article class="blog-post">
+                <h1>Probability Theory: Weak and Strong Law of Large Numbers</h1>
+                <p>Published on <time datetime="2024-01-01">January 1, 2024</time> by Prajit Adhikari</p>
+                <section>
+                    <h2>Introduction</h2>
+                    <p>Probability theory is a branch of mathematics concerned with the analysis of random phenomena. The Weak and Strong Law of Large Numbers are fundamental theorems in probability theory that describe the behavior of averages of random variables.</p>
+                </section>
+                <section>
+                    <h2>Weak Law of Large Numbers</h2>
+                    <p>The Weak Law of Large Numbers (WLLN) states that the sample average converges in probability towards the expected value as the sample size grows. Formally, if \(X_1, X_2, \ldots, X_n\) are independent and identically distributed (i.i.d.) random variables with expected value \(E[X_i] = \mu\), then for any \(\epsilon > 0\):</p>
+                    <p>\[\lim_{n \to \infty} P\left( \left| \frac{1}{n} \sum_{i=1}^n X_i - \mu \right| < \epsilon \right) = 1\]</p>
+                </section>
+                <section>
+                    <h2>Strong Law of Large Numbers</h2>
+                    <p>The Strong Law of Large Numbers (SLLN) states that the sample average almost surely converges to the expected value as the sample size grows. Formally, if \(X_1, X_2, \ldots, X_n\) are i.i.d. random variables with expected value \(E[X_i] = \mu\), then:</p>
+                    <p>\[\frac{1}{n} \sum_{i=1}^n X_i \xrightarrow{\text{a.s.}} \mu\]</p>
+                    <p>This means that:</p>
+                    <p>\[P\left( \lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n X_i = \mu \right) = 1\]</p>
+                </section>
+                <section>
+                    <h2>Conclusion</h2>
+                    <p>The Weak and Strong Law of Large Numbers are powerful results in probability theory that provide a foundation for statistical inference. They assure us that with a large enough sample size, the sample average will be close to the expected value.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prajit Adhikari. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

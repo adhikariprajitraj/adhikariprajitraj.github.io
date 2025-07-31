@@ -1,19 +1,29 @@
 // Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Mobile menu script loaded');
+    
     // Mobile menu toggle functionality
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
+    console.log('Mobile menu toggle found:', mobileMenuToggle);
+    console.log('Nav links found:', navLinks);
+    
     if (mobileMenuToggle && navLinks) {
+        console.log('Setting up mobile menu functionality');
+        
         mobileMenuToggle.addEventListener('click', function() {
+            console.log('Mobile menu toggle clicked');
             navLinks.classList.toggle('active');
             
             // Update toggle button icon
             const icon = mobileMenuToggle.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.className = 'fas fa-times';
+                console.log('Menu opened');
             } else {
                 icon.className = 'fas fa-bars';
+                console.log('Menu closed');
             }
         });
         
@@ -35,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.className = 'fas fa-bars';
             });
         });
+    } else {
+        console.error('Mobile menu elements not found');
     }
     
     // Handle window resize

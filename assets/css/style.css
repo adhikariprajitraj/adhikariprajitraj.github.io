@@ -87,6 +87,7 @@ nav {
     align-items: center;
     height: 90px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .nav-left {
@@ -867,14 +868,9 @@ nav {
 
 /* Responsive Design - Mobile First Approach */
 @media (max-width: 768px) {
-    /* Navigation */
-    nav {
-        height: auto;
-        padding: 1rem 0;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
+    /* Navigation - Override with mobile-responsive.css rules */
+    /* Mobile navigation is handled in mobile-responsive.css */
+    
     .nav-left {
         gap: 1rem;
     }
@@ -886,19 +882,6 @@ nav {
 
     .logo {
         font-size: 1.4rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.5rem;
-    }
-
-    .nav-links a {
-        padding: 0.8rem 1rem;
-        font-size: 1rem;
-        width: 100%;
-        text-align: center;
     }
 
     .theme-toggle {

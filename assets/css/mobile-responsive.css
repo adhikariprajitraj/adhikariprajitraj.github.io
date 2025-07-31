@@ -6,8 +6,28 @@
     nav {
         position: relative;
         padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
+    /* Show mobile menu toggle on mobile */
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle:hover {
+        color: var(--secondary-color);
+    }
+
+    /* Hide desktop navigation elements on mobile */
     .nav-links {
         position: absolute;
         top: 100%;
@@ -21,6 +41,9 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
     }
 
     .nav-links.active {
@@ -34,35 +57,36 @@
         padding: 1rem 2rem;
         border-bottom: 1px solid var(--border-color);
         text-align: left;
+        width: 100%;
     }
 
     .nav-links a:last-child {
         border-bottom: none;
     }
 
-    /* Mobile menu toggle button */
+    /* Hide mobile menu toggle on desktop */
     .mobile-menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--text-color);
-        cursor: pointer;
-        padding: 0.5rem;
-    }
-
-    .mobile-menu-toggle:hover {
-        color: var(--secondary-color);
-    }
-
-    /* Hide desktop navigation elements on mobile */
-    .nav-links {
         display: none;
     }
+}
 
-    .nav-links.active {
+/* Desktop navigation - hide mobile toggle */
+@media (min-width: 769px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .nav-links {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        box-shadow: none;
+        border-top: none;
+        padding: 0;
     }
 }
 

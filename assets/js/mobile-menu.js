@@ -37,23 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add mobile menu toggle button to navigation
-    if (window.innerWidth <= 768) {
-        const nav = document.querySelector('nav');
-        if (nav && !document.querySelector('.mobile-menu-toggle')) {
-            const mobileToggle = document.createElement('button');
-            mobileToggle.className = 'mobile-menu-toggle';
-            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            mobileToggle.setAttribute('aria-label', 'Toggle mobile menu');
-            
-            // Insert before nav-links
-            const navLinks = nav.querySelector('.nav-links');
-            if (navLinks) {
-                nav.insertBefore(mobileToggle, navLinks);
-            }
-        }
-    }
-    
     // Handle window resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
@@ -63,12 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
             if (mobileToggle) {
-                mobileToggle.style.display = 'none';
-            }
-        } else {
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            if (mobileToggle) {
-                mobileToggle.style.display = 'block';
+                const icon = mobileToggle.querySelector('i');
+                icon.className = 'fas fa-bars';
             }
         }
     });
